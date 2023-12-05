@@ -11,8 +11,8 @@
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-            <img src="<?=base_url()?>uploads/bb.jpg" style="margin-left:auto;margin-right:auto;border-radius:20%;height:400px;width:100%">
-            <p style="text-align:center;font-size:24px;color:black;"><b>BADAN PENDAPATAN DAERAH TABALONG</b></p>
+            <img src="<?=base_url()?>uploads/bb.jpg" style="margin-left:auto;margin-right:auto;border-radius:6%;height:400px;width:100%">
+            <p style="text-align:center;font-size:24px;margin-top: 16px;"><b>BADAN PENDAPATAN DAERAH TABALONG</b></p>
         </div>
         <div class="col-md-3"></div>
     </div>
@@ -33,7 +33,7 @@
 
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="info-box">
-            <span class="info-box-icon bg-teal"><i class="fa fa-building"></i></span>
+            <span class="info-box-icon bg-maroon"><i class="fa fa-bed"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Hotel</span>
@@ -59,7 +59,7 @@
 
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="info-box">
-            <span class="info-box-icon bg-red"><i class="fa fa-music"></i></span>
+            <span class="info-box-icon bg-orange"><i class="fa fa-music"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Hiburan</span>
@@ -72,7 +72,7 @@
          <!-- /.isi Dari Bawah sini V-->
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="fa fa-cutlery"></i></span>
+            <span class="info-box-icon bg-red"><i class="fa fa-address-card" aria-hidden="true"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Raklame</span> <!-- /.ganti - -->
@@ -85,7 +85,7 @@
 
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="fa fa-cutlery"></i></span>
+            <span class="info-box-icon bg-yellow"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Penerangan Jalan</span>
@@ -98,7 +98,7 @@
 
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="fa fa-cutlery"></i></span>
+            <span class="info-box-icon bg-blue"><i class="fa fa-car"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Parkir</span>
@@ -111,7 +111,7 @@
 
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="fa fa-cutlery"></i></span>
+            <span class="info-box-icon bg-grey"><img  src="/amp/assets/icon-sarang-walet.svg" style="padding: 25px;" alt=""></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Sarang burung Walet</span>
@@ -124,7 +124,7 @@
 
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="fa fa-cutlery"></i></span>
+            <span class="info-box-icon bg-navy"><i class="fa fa-area-chart" aria-hidden="true"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Air Tanah</span>
@@ -137,7 +137,7 @@
 
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="fa fa-cutlery"></i></span>
+            <span class="info-box-icon bg-teal"><i class="fa fa-home"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Bumi dan Bangunan</span>

@@ -56,8 +56,8 @@
         <div class="pull-left image">
           <img src="<?=base_url()?>uploads/tabalong.png" class="light-logo" alt="logo" width="50%">
         </div>
-        <div class="pull-left info">
-          <p align="center">BAPENDA</p>
+        <div class="pull-left info" style="padding-left: 0px;padding-top: 0px;">
+          <p style="margin-bottom: 0;" align="center">BAPENDA</p>
           <p>Badan Pendapatan Daerah</p>
         </div>
       </div>
@@ -162,8 +162,8 @@
         <div class="pull-left image">
           <img src="<?=base_url()?>uploads/tabalong.png" class="light-logo" alt="logo" width="50%">
         </div>
-        <div class="pull-left info">
-        <p align="center">BAPENDA</p>
+        <div class="pull-left info" style="padding-left: 0px;padding-top: 0px;">
+        <p style="margin-bottom: 0;" align="center">BAPENDA</p>
           <b>Badan Pendapatan Daerah</b>
         </div>
       </div>
