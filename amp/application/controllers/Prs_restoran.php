@@ -14,6 +14,7 @@ class Prs_restoran extends CI_Controller {
 
 	public function index()
 	{
+		$data['title'] = "Restoran";
 		$post=$this->input->post(null, TRUE);
 		$awal = $this->input->post('tgl_awal');
 		$akhir = $this->input->post('tgl_akhir');	
@@ -26,6 +27,24 @@ class Prs_restoran extends CI_Controller {
 		}
 		$data['row'] = $this->pws_restoran_m->get_sudah();
 		$this->template->load('template','pemeriksaan/restoran/prs_restoran_data', $data);
+
+		
+    }
+	public function laporan()
+	{
+		$data['title'] = "Restoran";
+		$post=$this->input->post(null, TRUE);
+		$awal = $this->input->post('tgl_awal');
+		$akhir = $this->input->post('tgl_akhir');	
+		if(isset($_POST['cetak'])){
+			$data['row'] = $this->prs_restoran_m->cetak($awal,$akhir)->result();
+			$data['awal'] = $awal;
+			$data['akhir'] = $akhir;
+			$html = $this->load->view('pemeriksaan/restoran/rekap_restoran', $data, TRUE);
+		$this->fungsi->PdfGenerator($html,'Rekap Pemeriksaan Restoran','A4','landscape');
+		}
+		$data['row'] = $this->pws_restoran_m->get_sudah();
+		$this->template->load('template','pemeriksaan/restoran/laporanRestoran', $data);
 
 		
     }

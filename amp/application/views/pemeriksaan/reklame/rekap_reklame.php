@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rekapitulasi Hasil Pemeriksaan Hotel</title>
+    <title>Rekapitulasi Hasil Pemeriksaan <?=$title;?></title>
 </head>
 <body>
     <div style="width: 100%; margin-left:-5px ; margin-right:-5px">
@@ -24,7 +24,7 @@
             <tbody>
         </table>
         <hr style="margin-top: -3px;">
-        <p style="font-size:16px; line-height:70%"><b>REKAP PEMERIKSAAN PAJAK HOTEL</b></p>
+        <p style="font-size:16px; line-height:70%"><b>REKAP PEMERIKSAAN PAJAK <?=strtoupper($title);?></b></p>
         <?php if($awal&&$akhir!=null){ ?>
             <p style="font-size:12px; line-height:70%">Periode : <?=indo_date($awal)?> - <?=indo_date($akhir)?></p>
         <?php } ?>

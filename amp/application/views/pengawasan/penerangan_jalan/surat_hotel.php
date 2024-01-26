@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pengawasan Reklame <?=$row->no_pws?></title>
+    <title>Pengawasan Hotel <?=$row->no_pws?></title>
     <style>
         td.atas{
             font-size:15px;
@@ -11,18 +11,18 @@
         td.isi{
             font-size:14px;
             border:1px solid;
-            padding: 10px;
+            padding: 8px;
         }
         th.isi{
             font-size:14px;
             border:1px solid;
-            padding: 6px;
+            padding: 4px;
         }
         td.nom{
             font-size:12px;
             text-align:center;
             border:1px solid;
-            padding: 3px;
+            padding: 2px;
         }
         table.isi{
             border-collapse: collapse;
@@ -35,7 +35,7 @@
             <tbody>
                 <tr>
                     <td style="text-align:center">
-                        <img src="uploads/tabalong.png" alt="logo" width="110px" height="110px">
+                        <img src="uploads/tabalong.png" alt="logo" width="90px" height="90px">
                     </td>
                     <td width="90%" style="text-align:center">
                         <p style="text-align:center; font-size:18px; line-height: 1em">PEMERINTAH KABUPATEN TABALONG</p>
@@ -46,7 +46,8 @@
             <tbody>
         </table>
         <hr style="margin-top: -3px;">
-        <p style="font-size:16px; line-height:70%"><b>SURAT PENGAWASAN PAJAK REKLAME</b></p>
+        <p style="text-align:right; line-height:0%; margin-top:20px">TABALONG, <?=date('d-m-Y')?>
+        <p style="font-size:16px; line-height:70%"><b>FORM PENGAWASAN PAJAK HOTEL</b></p>
         <table>
             <tbody>
                 <tr style="line-height:30%">
@@ -79,59 +80,79 @@
             </tr>
             <tr>
                 <td class="nom">2</td>
-                <td class="isi">Nama Penyelenggara</td>
-                <td class="isi" colspan="2"><?= ucwords($row->nama_p)?></td>
+                <td class="isi">Nama Wajib Pajak</td>
+                <td class="isi" colspan="2"><?= ucwords($row->nama_wp)?></td>
             </tr>
             <tr>
                 <td class="nom">3</td>
-                <td class="isi">Alamat Penyelenggara</td>
-                <td class="isi" colspan="2"><?= ucwords($row->alamat_p)?></td>
+                <td class="isi">Izin</td>
+                <td class="isi" colspan="2"><?= ucwords($row->izin)?></td>
             </tr>    
             <tr>
                 <td class="nom">3</td>
-                <td class="isi">Nomor Telepon Penyelenggara</td>
-                <td class="isi" colspan="2"><?=$row->no_telp_p?></td>
+                <td class="isi">Tarif Pajak <?=$row->pajak?>%</td>
+                <td class="isi" colspan="2"><?=ucwords($row->tarif)?></td>
             </tr> 
             <tr>
                 <td class="nom">4</td>
-                <td class="isi">Tempat Penyelenggaraan Acara</td>
-                <td class="isi" colspan="2"><?= ucwords($row->tempat)?></td>
+                <td class="isi">SPTPD</td>
+                <?php if($row->sptpd != null) { ?>
+                    <td class="isi" colspan="2"> Ada </td>
+                <?php } else { ?>
+                    <td class="isi" colspan="2"> Tidak Ada </td>
+                <?php } ?>
             </tr>       
             <tr> 
-                <td class="nom" rowspan="6">5</td>
-                <td class="isi" rowspan="6">Tanda Masuk</td>
-                <td class="isi">Telah Disahkan (PORPORASI) Pemko Banjarmasin</td>
-                <td class="isi"><?= ucwords($row->sah)?></td>
-            </tr>
-            <tr>
-                <td class="isi">Tertera Harga Tanda Masuk (HTM)</td>
-                <td class="isi"><?= ucwords($row->harga)?></td>
-            </tr>
-            <tr>
-                <td class="isi">Tertera Nomor Seri / Nomor Urut</td>
-                <td class="isi"><?= ucwords($row->seri)?></td>
-            </tr>
-            <tr>
-                <td class="isi">Dilakukan Penyobekan di Bagian Tertentu</td>
-                <td class="isi"><?= ucwords($row->sobek)?></td>
-            </tr>
-            <tr>
-                <td class="isi">Menyimpan Bagian / Sobekan Tersebut</td>
-                <td class="isi"><?= ucwords($row->simpan)?></td>
-            </tr>
-            <tr>
-                <td class="isi">Dibuat Laporan Penjualan</td>
-                <td class="isi"><?= ucwords($row->lapor)?></td>
+                <td class="nom">5</td>
+                <td class="isi">Rekap Penerimaan Bulanan ybs</td>  
+                <td class="isi" colspan="2"><?= ucwords($row->rekap_terima)?></td>
             </tr>
             <tr>
                 <td class="nom">6</td>
-                <td class="isi">Tanggal Bayar</td>
+                <td class="isi">Rekap Penggunaan Bill/Bon</td>
+                <td class="isi" colspan="2"><?= ucwords($row->rekap_bill)?></td>
+            </tr>
+            <tr>
+                <td class="nom">7</td>
+                <td class="isi">SSPD</td>
+                <?php if($row->sspd != null) { ?>
+                    <td class="isi" colspan="2"> Ada </td>
+                <?php } else { ?>
+                    <td class="isi" colspan="2"> Tidak Ada </td>
+                <?php } ?>
+            </tr>
+            <tr>
+                <td class="nom">8</td>
+                <td class="isi">Bill/Bon Penjualan</td>
+                <td class="isi" colspan="2"><?= ucwords($row->bill)?></td>
+            </tr>
+            <tr>
+                <td class="nom" rowspan="4">9</td>
+                <td class="isi" rowspan="4">Jenis Pembayaran</td>
+                <td class="isi">Uang Kontan (Cash)</td>
+                <td class="isi"><?= ucwords($row->cash)?></td>
+            </tr>
+            <tr>
+                <td class="isi">Kartu Debit/Kredit (EDC)</td>
+                <td class="isi"><?= ucwords($row->edc)?></td>
+            </tr>
+            <tr>
+                <td class="isi">E-Money</td>
+                <td class="isi"><?= ucwords($row->emoney)?></td>
+            </tr> 
+            <tr>
+                <td class="isi">Online Travel Agent (OTA)</td>
+                <td class="isi"><?= ucwords($row->ota)?></td>
+            </tr>
+            <tr>
+                <td class="nom">10</td>
+                <td class="isi">Tanggal Bayar Terakhir</td>
                 <td class="isi" colspan="2"><?= indo_date($row->tgl_bayar)?></td>
             </tr>
             <tr>
-                <td class="nom">5</td>
+                <td class="nom">11</td>
                 <td class="isi">Keterangan</td>
-                <td class="isi" colspan="2"><?= ucwords($row->ket)?></td>
+                <td class="isi" colspan="2"><?=$row->ket?></td>
             </tr>
         </table>
         <br><br>

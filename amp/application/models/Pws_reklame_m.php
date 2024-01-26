@@ -121,5 +121,16 @@ class Pws_reklame_m extends CI_Model {
         $query = $this->db->get();
         return $query;
     }
+        public function get_sudah()
+    {
+        // $array = array('jumlah >' => '0');
+        $this->db->select('pws_reklame.*, wp.*, tipe_wp.*');
+        $this->db->from('pws_reklame');
+        $this->db->join('wp', 'pws_reklame.npwpd = wp.npwpd');
+        $this->db->join('tipe_wp', 'pws_reklame.tipe_id = tipe_wp.tipe_id');
+        // $this->db->where($array);
+        $query = $this->db->get();
+        return $query;
+    }
 
 }

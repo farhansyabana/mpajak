@@ -1,12 +1,13 @@
+<?php $babi = $this->uri->segment(1);?>
 <section class="content-header">
   <h1>
     Pemeriksaan
-    <b>Pajak <?=$title;?></b>
+    <b>Hotel</b>
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-home"></i></a></li>
-    <li class="active">Pemeriksaan Pajak</li>
-    <li class="active"><?=$title;?></li>
+    <li class="active">Pemeriksaan</li>
+    <li class="active">Hotel</li>
   </ol>
 </section>
 
@@ -14,7 +15,7 @@
 <section class="content">
     <div class="box">
         <div class="box-header with-border">
-            <h3 class="box-title">Data Pemeriksaan Pajak <?=$title;?></h3>
+            <h3 class="box-title">Data Pemeriksaan Pajak Hotel</h3>
             <div class="pull-right">
                 <a href="<?= site_url('prs_hotel/add')?>" class="btn bg-teal btn-flat">
                     <i class="fa fa-user-plus"></i> Add
@@ -55,5 +56,30 @@
                     <?php } ?>
                 </tbody>
             </table>
+        </div>
+
+        <div class="box-body">
+            <form action="" method="post">
+                <div class="row">
+                    <div class="col-md-2">
+                        <label for="tgl_awal">Dari Tanggal : </label>
+                        <input type="date" name="tgl_awal" id="tgl_awal" class="form-control">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="tgl_awal">Sampai Tanggal : </label>
+                        <input type="date" name="tgl_akhir" id="tgl_akhir" class="form-control">
+                    </div>
+                    <br>
+                    <div class="col-md-2">
+                        <button id="cetak" type="submit" name="cetak" class="btn btn-success btn-normal" formtarget="_blank">CETAK REKAP</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
+    <script>
+        document.getElementById("cetak").click();
+        document.location.href = "<?=base_url('/')?><?=$babi;?>";
+        console.log("$babi");
+    </script>
 </section>

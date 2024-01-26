@@ -15,9 +15,9 @@
     
     <div class="box">
         <div class="box-header with-border">
-            <h3 class="box-title">Data Pengawasan Pajak hiburan</h3>
+            <h3 class="box-title">Data Pengawasan Pajak Penerangan Jalan</h3>
             <div class="pull-right">
-                <a href="<?= site_url('pws_hiburan/add')?>" class="btn btn-primary btn-flat">
+                <a href="<?= site_url('pws_hotel/add')?>" class="btn btn-primary btn-flat">
                     <i class="fa fa-user-plus"></i> Add
                 </a>
             </div>
@@ -54,7 +54,7 @@
                         <td><?= $data->nama_wp?></td>
                         <?php if ($data->sspd != null) { ?>
                             <td class="text-center">
-                                <a href="<?= 'uploads/pengawasan/hiburan/'.$data->sspd?>" class="btn bg-olive btn-flat">SSPD</a>
+                                <a href="<?= 'uploads/pengawasan/hotel/'.$data->sspd?>" class="btn bg-olive btn-flat">SSPD</a>
                             </td>
                         <?php } else { ?>
                             <td class="text-center">
@@ -63,7 +63,7 @@
                         <?php } ?>
                         <?php if ($data->sptpd != null) { ?>
                             <td class="text-center">
-                                <a href="<?= 'uploads/pengawasan/hiburan/'.$data->sptpd?>" class="btn bg-olive btn-flat">SPTPD</a>
+                                <a href="<?= 'uploads/pengawasan/hotel/'.$data->sptpd?>" class="btn bg-olive btn-flat">SPTPD</a>
                             </td>
                         <?php } else { ?>
                             <td class="text-center">
@@ -91,22 +91,23 @@
                                 data-cash="<?=strtoupper($data->cash)?>"
                                 data-edc="<?=strtoupper($data->edc)?>"
                                 data-emoney="<?=strtoupper($data->emoney)?>"
+                                data-ota="<?=strtoupper($data->ota)?>"
                                 data-tgl_bayar="<?=indo_date($data->tgl_bayar)?>"
                                 data-ket="<?=$data->ket?>">
                                 <i class="fa fa-eye"></i>
                             </a>
-                            <a href="<?= site_url('pws_hiburan/edit/'.$data->no_pws)?>" class="btn btn-info btn-sm">
+                            <a href="<?= site_url('pws_hotel/edit/'.$data->no_pws)?>" class="btn btn-info btn-sm">
                                 <i class="fa fa-pencil"></i>
                             </a> 
-                            <a href="<?= site_url('pws_hiburan/del/'.$data->no_pws)?>" onclick="return confirm('Apakah anda yakin untuk menghapus data?')" class="btn btn-danger btn-sm">
+                            <a href="<?= site_url('pws_hotel/del/'.$data->no_pws)?>" onclick="return confirm('Apakah anda yakin untuk menghapus data?')" class="btn btn-danger btn-sm">
                                 <i class="fa fa-trash"></i>
-                            </a> 
+                            </a>
                             <?php if ($data->verif == 'Y') { ?> 
-                                <a href="<?= site_url('pws_hiburan/surat/'.$data->no_pws)?>" target="blank" class="btn bg-green btn-sm">
+                                <a href="<?= site_url('pws_hotel/surat/'.$data->no_pws)?>" target="blank" class="btn bg-green btn-sm">
                                     <i class="fa fa-print"></i>
                                 </a> 
                             <?php } else if ($data->verif == 'T') {  ?> 
-                                <a href="<?= site_url('pws_hiburan/verif/'.$data->no_pws)?>" class="btn btn-warning btn-sm">
+                                <a href="<?= site_url('pws_hotel/verif/'.$data->no_pws)?>" class="btn btn-warning btn-sm">
                                     <i class="fa fa-check"></i>
                                 </a>
                             <?php } ?>
@@ -223,6 +224,10 @@
                             <td><span id="emoney"></span></td> 
                         </tr>
                         <tr>
+                            <th>Online Travel Agent (OTA)</th>
+                            <td><span id="ota"></span></td> 
+                        </tr>
+                        <tr>
                             <td colspan="2" align="center"><b>KETERANGAN TAMBAHAN</b></td>
                         </tr>
                         <tr>
@@ -264,12 +269,11 @@ $(document).ready(function(){
         } else {
             var sspd = 'ADA';
         }
-        var rekap_terima = $(this).data('rekap_terima');
-        var rekap_bill = $(this).data('rekap_bill');
         var bill = $(this).data('bill');
         var cash = $(this).data('cash');
         var edc = $(this).data('edc');
         var emoney = $(this).data('emoney');
+        var ota = $(this).data('ota');
         var tgl_bayar = $(this).data('tgl_bayar');
         var ket = $(this).data('ket');
         //menampilkan data pada modal'
@@ -290,6 +294,7 @@ $(document).ready(function(){
         $('#cash').text(cash);
         $('#edc').text(edc);
         $('#emoney').text(emoney);
+        $('#ota').text(ota);
         $('#tgl_bayar').text(tgl_bayar);
         $('#ket').text(ket);
         // =========================

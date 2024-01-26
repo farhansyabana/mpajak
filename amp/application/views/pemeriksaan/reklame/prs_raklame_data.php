@@ -1,12 +1,12 @@
 <section class="content-header">
   <h1>
     Pemeriksaan
-    <b>Hotel</b>
+    <b>Pajak <?=$title;?></b>
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-home"></i></a></li>
     <li class="active">Pemeriksaan</li>
-    <li class="active">Hotel</li>
+    <li class="active">Pajak <?=$title;?></li>
   </ol>
 </section>
 
@@ -14,9 +14,9 @@
 <section class="content">
     <div class="box">
         <div class="box-header with-border">
-            <h3 class="box-title">Data Pemeriksaan Pajak Hotel</h3>
+            <h3 class="box-title">Data Pemeriksaan Pajak reklame</h3>
             <div class="pull-right">
-                <a href="<?= site_url('prs_hotel/add')?>" class="btn bg-teal btn-flat">
+                <a href="<?= site_url('prs_reklame/add')?>" class="btn bg-teal btn-flat">
                     <i class="fa fa-user-plus"></i> Add
                 </a>
             </div>
@@ -35,45 +35,33 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $no=1; 
-                    foreach($row->result() as $key => $data) { ?>
-                    <tr>
-                        <td><?= $no++?></td>
-                        <td><?= $data->no_pws?></td>
-                        <td><?= indo_date($data->tgl_pws)?></td>
-                        <td><?= $data->npwpd?></td>
-                        <td><?= $data->nama_wp?></td>
-                        <td class="text-center">
-                            <a href="<?= site_url('prs_hotel/cek/'.$data->no_pws)?>" class="btn btn-primary btn-sm">
-                                <i class="fa fa-eye"></i> LIHAT
-                            </a>   
-                            <a href="<?= site_url('prs_hotel/del/'.$data->no_pws)?>" class="btn btn-danger btn-sm">
-                                <i class="fa fa-trash"></i> HAPUS DATA
-                            </a> 
-                        </td>
-                    </tr>
-                    <?php } ?>
+                <?php $no=1; 
+if ($row && $row->result()) {
+    foreach($row->result() as $key => $data) { ?>
+        <tr>
+            <td><?= $no++?></td>
+            <td><?= $data->no_pws?></td>
+            <td><?= indo_date($data->tgl_pws)?></td>
+            <td><?= $data->npwpd?></td>
+            <td><?= $data->nama_wp?></td>
+            <td class="text-center">
+                <a href="<?= site_url('prs_reklame/cek/'.$data->no_pws)?>" class="btn btn-primary btn-sm">
+                    <i class="fa fa-eye"></i> LIHAT
+                </a>   
+                <a href="<?= site_url('prs_reklame/del/'.$data->no_pws)?>" class="btn btn-danger btn-sm">
+                    <i class="fa fa-trash"></i> HAPUS DATA
+                </a> 
+            </td>
+        </tr>
+    <?php }
+} else {
+    // Handle kasus ketika $row tidak valid atau tidak mengembalikan objek yang diharapkan
+    echo "Data tidak tersedia atau terdapat kesalahan dalam pengambilan data.";
+}
+?>
+
                 </tbody>
             </table>
-        </div>
-
-        <div class="box-body">
-            <form action="" method="post">
-                <div class="row">
-                    <div class="col-md-2">
-                        <label for="tgl_awal">Dari Tanggal : </label>
-                        <input type="date" name="tgl_awal" id="tgl_awal" class="form-control">
-                    </div>
-                    <div class="col-md-2">
-                        <label for="tgl_awal">Sampai Tanggal : </label>
-                        <input type="date" name="tgl_akhir" id="tgl_akhir" class="form-control">
-                    </div>
-                    <br>
-                    <div class="col-md-2">
-                        <button type="submit" name="cetak" class="btn btn-success btn-normal" formtarget="_blank">CETAK REKAP</button>
-                    </div>
-                </div>
-            </form>
         </div>
     </div>
 </section>

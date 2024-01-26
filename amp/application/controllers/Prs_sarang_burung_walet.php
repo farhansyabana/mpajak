@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Prs_hotel extends CI_Controller {
+class Prs_sarang_burung_walet extends CI_Controller {
 
 	function __construct()
 	{
@@ -14,7 +14,7 @@ class Prs_hotel extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = "Hotel";
+		$data['title'] = "Sarang burung walet";
 		$post=$this->input->post(null, TRUE);
 		$awal = $this->input->post('tgl_awal');
 		$akhir = $this->input->post('tgl_akhir');	
@@ -31,7 +31,7 @@ class Prs_hotel extends CI_Controller {
 
 	public function laporan()
 	{
-		$data['title'] = "Hotel";
+		$data['title'] = "Sarang burung walet";
 		$post=$this->input->post(null, TRUE);
 		$awal = $this->input->post('tgl_awal');
 		$akhir = $this->input->post('tgl_akhir');	

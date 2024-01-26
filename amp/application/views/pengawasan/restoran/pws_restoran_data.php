@@ -1,12 +1,12 @@
 <section class="content-header">
   <h1>
     Pengawasan
-    <b>restoran</b>
+    <b>Pajak <?=$title;?></b>
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-home"></i></a></li>
     <li class="active">Pengawasan</li>
-    <li class="active">restoran</li>
+    <li class="active">Pajak <?=$title;?></li>
   </ol>
 </section>
 

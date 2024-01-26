@@ -14,6 +14,7 @@ class Prs_hiburan extends CI_Controller {
 
 	public function index()
 	{
+		$data['title'] = "Hiburan";
 		$post=$this->input->post(null, TRUE);
 		$awal = $this->input->post('tgl_awal');
 		$akhir = $this->input->post('tgl_akhir');	
@@ -26,6 +27,22 @@ class Prs_hiburan extends CI_Controller {
 		}
 		$data['row'] = $this->pws_hiburan_m->get_sudah();
 		$this->template->load('template','pemeriksaan/hiburan/prs_hiburan_data', $data);
+    }
+	public function laporan()
+	{
+		$data['title'] = "Hiburan";
+		$post=$this->input->post(null, TRUE);
+		$awal = $this->input->post('tgl_awal');
+		$akhir = $this->input->post('tgl_akhir');	
+		if(isset($_POST['cetak'])){
+			$data['row'] = $this->prs_hiburan_m->cetak($awal,$akhir)->result();
+			$data['awal'] = $awal;
+			$data['akhir'] = $akhir;
+			$html = $this->load->view('pemeriksaan/hiburan/rekap_hiburan', $data, TRUE);
+			$this->fungsi->PdfGenerator($html,'Rekap Pemeriksaan Hiburan','A4','landscape');
+		}
+		$data['row'] = $this->pws_hiburan_m->get_sudah();
+		$this->template->load('template','pemeriksaan/hiburan/laporanHiburan', $data);
     }
 
 	public function add()

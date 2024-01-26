@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rekapitulasi Hasil Pengawasan Insidentil</title>
+    <title>Rekapitulasi Hasil Pengawasan Hotel</title>
 </head>
 <body>
     <div style="width: 100%; margin-left:-5px ; margin-right:-5px">
@@ -24,7 +24,7 @@
             <tbody>
         </table>
         <hr style="margin-top: -3px;">
-        <p style="font-size:16px; line-height:70%"><b>REKAP PENGAWASAN PAJAK INSIDENTIL</b></p>
+        <p style="font-size:16px; line-height:70%"><b>REKAP PENGAWASAN PAJAK HOTEL</b></p>
         <?php if($awal&&$akhir!=null){ ?>
             <p style="font-size:12px; line-height:70%">Periode : <?=indo_date($awal)?> - <?=indo_date($akhir)?></p>
         <?php } ?>
@@ -34,11 +34,14 @@
                 <th>No Pengawasan</th>
                 <th>Tanggal</th>
                 <th>NPWPD</th>
-                <th>Nama Penyelenggara</th>
-                <th>Alamat</th>
-                <th>No. Telepon</th>
-                <th>Tempat Acara</th>
-                <th>Tanda Masuk</th>
+                <th>Nama WP</th>
+                <th>Izin</th>
+                <th>Tarif Pajak</th>
+                <th>SPTPD</th>
+                <th>Rekap Terima</th>
+                <th>Rekap Guna Bill</th>
+                <th>SSPD</th>
+                <th>Bill/Bon</th>
                 <th>Tanggal Bayar</th>
                 <th>Keterangan</th>
             </tr>
@@ -49,23 +52,24 @@
                     <td><?= $data->no_pws?></td>
                     <td><?= indo_date($data->tgl_pws)?></td>
                     <td><?= $data->npwpd?></td>
-                    <td><?= ucwords($data->nama_p)?></td>
-                    <td><?= ucwords($data->alamat_p)?></td>
-                    <td><?= $data->no_telp_p?></td>
-                    <td><?= ucwords($data->tempat)?></td>
-                    <?php if($data->sah =='Ya' &&
-                             $data->harga =='Ya' &&
-                             $data->seri =='Ya' &&
-                             $data->sobek =='Ya' &&
-                             $data->simpan =='Ya' &&
-                             $data->lapor =='Ya'){ 
-                    ?>
-                        <td>Sudah Memenuhi Semua Syarat</td>
+                    <td><?= ucwords($data->nama_wp)?></td>
+                    <td><?= ucwords($data->izin)?></td>
+                    <td><?= ucwords($data->tarif)?></td>
+                    <?php if($data->sptpd != null) { ?>
+                        <td> Ada </td>
                     <?php } else { ?>
-                        <td>Belum Memenuhi Semua Syarat</td>
-                    <?php } ?> 
+                        <td> Tidak Ada </td>
+                    <?php } ?>
+                    <td><?= ucwords($data->rekap_terima)?></td>
+                    <td><?= ucwords($data->rekap_bill)?></td>
+                    <?php if($data->sspd != null) { ?>
+                        <td> Ada </td>
+                    <?php } else { ?>
+                        <td> Tidak Ada </td>
+                    <?php } ?>
+                    <td><?= ucwords($data->bill)?></td>
                     <td><?= indo_date($data->tgl_bayar)?></td>
-                    <td><?= ucwords($data->ket)?></td>
+                    <td><?= $data->ket?></td>
                 </tr>
             <?php } ?>
         </table>

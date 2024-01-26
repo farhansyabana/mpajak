@@ -1,12 +1,12 @@
 <section class="content-header">
   <h1>
     Pemeriksaan
-    <b>Hiburan</b>
+    <b>Pajak <?=$title;?></b>
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-home"></i></a></li>
     <li class="active">Pemeriksaan</li>
-    <li class="active">Hiburan</li>
+    <li class="active">Pajak <?=$title;?></li>
   </ol>
 </section>
 
@@ -57,23 +57,6 @@
             </table>
         </div>
 
-        <div class="box-body">
-            <form action="" method="post">
-                <div class="row">
-                    <div class="col-md-2">
-                        <label for="tgl_awal">Dari Tanggal : </label>
-                        <input type="date" name="tgl_awal" id="tgl_awal" class="form-control">
-                    </div>
-                    <div class="col-md-2">
-                        <label for="tgl_awal">Sampai Tanggal : </label>
-                        <input type="date" name="tgl_akhir" id="tgl_akhir" class="form-control">
-                    </div>
-                    <br>
-                    <div class="col-md-2">
-                        <button type="submit" name="cetak" class="btn btn-success btn-normal" formtarget="_blank">CETAK REKAP</button>
-                    </div>
-                </div>
-            </form>
-        </div>
+
     </div>
 </section>

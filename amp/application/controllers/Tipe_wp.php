@@ -66,14 +66,18 @@ class Tipe_wp extends CI_Controller {
         }
     }
     
-    public function del($id)
+	public function del($id)
 	{
-		$this->tipe_wp_m->del($id);
-		if($this->db->affected_rows() > 0){
-			echo "<script>
-				alert('Data berhasil dihapus');
-			</script>";
-			echo "<script>window,location='".site_url('tipe_wp')."';</script>";
+		try {
+			$this->tipe_wp_m->del($id);
+			redirect('tipe_wp');
+		} catch (Exception $e) {
+			echo 'Error: ' . $e->getMessage();
 		}
 	}
+	
+
+	
+	
+	
 }

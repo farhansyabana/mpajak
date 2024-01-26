@@ -46,7 +46,6 @@
                                 <option value="parkir"> PARKIR </option>
                                 <option value="sarang burung walet  "> SARANG BURUNG WALET </option>
                                 <option value="air tanah"> AIR TANAH </option>
-                                <option value="bumi dan bangunan"> BUMI DAN BANGUNAN </option>
 
                             <?php } else if ($this->uri->segment(2) == 'edit') { ?>
                                 <option value="hotel" <?=$row->ket_tipe == "hotel" ? "selected" : null?>> HOTEL </option>

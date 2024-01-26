@@ -14,6 +14,7 @@ class Pws_hotel extends CI_Controller {
 
 	public function index()
 	{
+		$data['title'] = "Hotel";
 		$post=$this->input->post(null, TRUE);
 		$awal = $this->input->post('tgl_awal');
 		$akhir = $this->input->post('tgl_akhir');	

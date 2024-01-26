@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Prs_hotel extends CI_Controller {
+class Prs_penerangan_jalan extends CI_Controller {
 
 	function __construct()
 	{

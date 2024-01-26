@@ -12,7 +12,7 @@
                 <tr>
                     <td width="20%"></td>
                     <td style="text-align:center">
-                        <img src="uploads/tabalong.png" alt="logo" width="200px" height="250px">
+                    <img src="uploads/tabalong.png" alt="logo" width="140px" height="90px">
                     </td>
                     <td width="50%" style="text-align:center">
                         <p style="text-align:center; font-size:16px; line-height: 0.5em">PEMERINTAH KABUPATEN TABALONG</p>
@@ -24,7 +24,7 @@
             <tbody>
         </table>
         <hr style="margin-top: -3px;">
-        <p style="font-size:16px; line-height:70%"><b>REKAP PEMERIKSAAN PAJAK HIBURAN</b></p>
+        <p style="font-size:16px; line-height:70%"><b>REKAP PEMERIKSAAN PAJAK <?=strtoupper($title);?></b></p>
         <?php if($awal&&$akhir!=null){ ?>
             <p style="font-size:12px; line-height:70%">Periode : <?=indo_date($awal)?> - <?=indo_date($akhir)?></p>
         <?php } ?>

@@ -44,7 +44,7 @@
                             <a href="<?= site_url('tipe_wp/edit/'.$data->tipe_id)?>" class="btn bg-green btn-xs">
                                 <i class="fa fa-pencil"></i> Ubah
                             </a> 
-                            <a href="<?= site_url('tipe_wp/del/'.$data->tipe_id)?>" onclick="return confirm('Apakah anda yakin untuk menghapus data?')" class="btn btn-danger btn-xs">
+                            <a href="<?= site_url('tipe_wp/del/'.$data->tipe_id)?>" class="btn btn-danger btn-xs">
                                 <i class="fa fa-trash"></i> Hapus
                             </a> 
                         </td>

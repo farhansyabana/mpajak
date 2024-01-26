@@ -44,10 +44,13 @@ class Tipe_wp_m extends CI_Model {
         $this->db->update('tipe_wp', $params);
     }
 
-    public function del($id)
-	{
-		$this->db->where('tipe_id', $id);
-		$this->db->delete('tipe_wp');
-	}
+// Model tipe_wp_m
+public function del($id)
+{
+    $this->db->where('tipe_id', $id);
+    $this->db->delete('tipe_wp');
+}
+
+    
 
 }

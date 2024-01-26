@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Prs_hiburan_m extends CI_Model {
+class Prs_reklame_m extends CI_Model {
 
     public function get($id=null)
       {
-        $this->db->select('prs_reklame.*, wp.*, pws_reklame.*');
+        $this->db->select('prs_reklame.*, wp.*, pws_reklame.*, tipe_wp.*');
         $this->db->from('prs_reklame');
         $this->db->join('pws_reklame', 'prs_reklame.no_pws = pws_reklame.no_pws');
         $this->db->join('wp', 'prs_reklame.npwpd = wp.npwpd');
@@ -19,13 +19,13 @@ class Prs_hiburan_m extends CI_Model {
 
     public function get_id($id=null)
     {
-        $this->db->select('prs_hiburan.*, wp.*, pws_hiburan.*, tipe_wp.*');
-        $this->db->from('prs_hiburan');
-        $this->db->join('pws_hiburan', 'prs_hiburan.no_pws = pws_hiburan.no_pws');
-        $this->db->join('wp', 'prs_hiburan.npwpd = wp.npwpd');
-        $this->db->join('tipe_wp', 'prs_hiburan.tipe_id = tipe_wp.tipe_id');
+        $this->db->select('prs_reklame.*, wp.*, pws_reklame.*, tipe_wp.*');
+        $this->db->from('prs_reklame');
+        $this->db->join('pws_reklame', 'prs_reklame.no_pws = pws_reklame.no_pws');
+        $this->db->join('wp', 'prs_reklame.npwpd = wp.npwpd');
+        $this->db->join('tipe_wp', 'prs_reklame.tipe_id = tipe_wp.tipe_id');
         if($id != null){
-            $this->db->where('prs_hiburan.id_hbr', $id);
+            $this->db->where('prs_reklame.id_htl', $id);
         }
         $query = $this->db->get();
         return $query;
@@ -60,7 +60,7 @@ class Prs_hiburan_m extends CI_Model {
                 'total' => $total,
                 'dibuat' => date('Y-m-d')
             ];
-            $this->db->insert('prs_hiburan', $params);
+            $this->db->insert('prs_reklame', $params);
         }
     }
 
@@ -88,23 +88,23 @@ class Prs_hiburan_m extends CI_Model {
             'total' => $total,
             'dibuat' => date('Y-m-d')
         ];
-        $this->db->where('id_hbr', $post['id_hbr']);
-        $this->db->update('prs_hiburan', $params);
+        $this->db->where('id_htl', $post['id_htl']);
+        $this->db->update('prs_reklame', $params);
     }
 
     public function del($id)
 	{
 		$this->db->where('no_pws', $id);
-		$this->db->delete('prs_hiburan');
+		$this->db->delete('prs_reklame');
 	}
 
     public function cetak($awal,$akhir)
     {
-        $this->db->select('prs_hiburan.*, wp.*, pws_hiburan.*');
-        $this->db->from('prs_hiburan');
-        $this->db->join('pws_hiburan', 'prs_hiburan.no_pws = pws_hiburan.no_pws');
-        $this->db->join('wp', 'prs_hiburan.npwpd = wp.npwpd');
-        $this->db->join('tipe_wp', 'prs_hiburan.tipe_id = tipe_wp.tipe_id');
+        $this->db->select('prs_reklame.*, wp.*, pws_reklame.*, tipe_wp.*');
+        $this->db->from('prs_reklame');
+        $this->db->join('pws_reklame', 'prs_reklame.no_pws = pws_reklame.no_pws');
+        $this->db->join('wp', 'prs_reklame.npwpd = wp.npwpd');
+        $this->db->join('tipe_wp', 'prs_reklame.tipe_id = tipe_wp.tipe_id');
         if($awal&&$akhir != null)
         {
             $this->db->where('tgl_pws BETWEEN "'. date('Y-m-d', strtotime($awal)). '" and "'. date('Y-m-d', strtotime($akhir)).'"');

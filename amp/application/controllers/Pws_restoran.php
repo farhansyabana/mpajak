@@ -14,6 +14,7 @@ class Pws_restoran extends CI_Controller {
 
 	public function index()
 	{
+		$data['title'] = "Restoran";
 		$post=$this->input->post(null, TRUE);
 		$awal = $this->input->post('tgl_awal');
 		$akhir = $this->input->post('tgl_akhir');	
